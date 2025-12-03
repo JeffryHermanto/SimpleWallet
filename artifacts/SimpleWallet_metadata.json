@@ -1,0 +1,51 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/learnings/1_SimpleWallet.sol": "SimpleWallet"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/learnings/1_SimpleWallet.sol": {
+			"keccak256": "0xa2e67917535eea6600149da37aed970548e6243e97b301cd2800e7e59c404320",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://5aca339108481073fb06c59a9c4825f71d93f53c6aa596e19053d867801dbe49",
+				"dweb:/ipfs/QmZddkQyP5NjXeSLmt2QekSuH1ceRyppsVhkhAHyJqCa8o"
+			]
+		}
+	},
+	"version": 1
+}
