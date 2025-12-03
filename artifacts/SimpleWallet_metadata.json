@@ -74,11 +74,19 @@
 				"type": "event"
 			},
 			{
+				"stateMutability": "payable",
+				"type": "fallback"
+			},
+			{
 				"inputs": [],
 				"name": "deposit",
 				"outputs": [],
 				"stateMutability": "payable",
 				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
 			}
 		],
 		"devdoc": {
@@ -109,11 +117,11 @@
 	},
 	"sources": {
 		"contracts/learnings/1_SimpleWallet.sol": {
-			"keccak256": "0x1406bd5852da2595d8e75e6a9111f82ad63b729ac48de6f1ece58d7f2cb7843a",
+			"keccak256": "0x1800c0934dd43c209910bbc2ae6a0605248a556fe57aec7f783ad9bb43f82e03",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://c6d29443d25a6073cb4e0f66f830006459ec375cbcb41efd89d8172113d9451e",
-				"dweb:/ipfs/QmStSqAFk8fB3RtND1D2sw2d3e7WYGEi99g66ixCfwqMQU"
+				"bzz-raw://6941bb2a77244f0f9be641cf1ccf69774f66962bfab15eec4d374c3f2dc27d0f",
+				"dweb:/ipfs/QmQpTtZ7s2WbK5ScKy72Q2kZiV2cE5PmCNh5QvdjP2QyeH"
 			]
 		}
 	},

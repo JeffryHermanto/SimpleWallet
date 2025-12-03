@@ -25,6 +25,14 @@ contract SimpleWallet {
         _deposit();
     }
 
+    receive() external payable {
+        _deposit();
+    }
+
+    fallback() external payable {
+        _deposit();
+    }
+
     // user bisa melihat saldonya sendiri dan saldo user lain
     // user bisa mentransfer saldo dia ke user lain (*)
     // user bisa menarik kembali saldonya (*)
