@@ -33,11 +33,11 @@ contract SimpleWallet {
         _deposit();
     }
 
-    function getMyBalance() external view returns(uint) {
+    function getMyBalance() external view returns (uint) {
         return balances[msg.sender];
     }
 
-    function getBalance(address user) external view returns(uint) {
+    function getBalance(address user) external view returns (uint) {
         return balances[user];
     }
 
@@ -49,5 +49,12 @@ contract SimpleWallet {
         emit Transfer(msg.sender, to, amount);
     }
 
-    // user bisa menarik kembali saldonya (*)
+    function withdraw(uint amount) external {
+        require(amount > 0, "Penarikan tidak bisa 0");
+        require(balances[msg.sender] >= amount, "Saldo tidak cukup");
+        balances[msg.sender] -= amount;
+        (bool success, ) = msg.sender.call{value: amount}("");
+        require(success, "Transfer gagal");
+        emit Withdraw(msg.sender, amount);
+    }
 }

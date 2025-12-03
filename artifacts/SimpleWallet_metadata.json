@@ -135,6 +135,19 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "withdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"stateMutability": "payable",
 				"type": "receive"
 			}
@@ -167,11 +180,11 @@
 	},
 	"sources": {
 		"contracts/learnings/1_SimpleWallet.sol": {
-			"keccak256": "0xeb01521804c821552f3720813f6fe5629fa5e9de8c12b68158d236329468841e",
+			"keccak256": "0xf8243c424dbf55118605eacbf8b26aff20927c9c9d8641be981e9dffd061cd65",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://266aa51fa2ed7fdca7109347307f17d00e22e8986f01c32376638df88101680c",
-				"dweb:/ipfs/QmajMNazz2PkQatqV1ynqudewNzkJUqZxdxog5EDtirz11"
+				"bzz-raw://a15da37c292f621dd9db3bab4a5769d61029cd2b585f1bc4b80c6d8123f33660",
+				"dweb:/ipfs/Qmb6uRsMVUAE3vYPsiU8TMsS8JJWBNA8q47vTgNzMdqCzM"
 			]
 		}
 	},
