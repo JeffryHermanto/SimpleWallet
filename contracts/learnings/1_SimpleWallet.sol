@@ -41,7 +41,13 @@ contract SimpleWallet {
         return balances[user];
     }
 
-    // user bisa melihat saldonya sendiri dan saldo user lain
-    // user bisa mentransfer saldo dia ke user lain (*)
+    function transfer(address to, uint amount) external {
+        require(balances[msg.sender] >= amount, "Saldo tidak cukup");
+        require(to != address(0), "Address Zero");
+        balances[msg.sender] -= amount;
+        balances[to] += amount;
+        emit Transfer(msg.sender, to, amount);
+    }
+
     // user bisa menarik kembali saldonya (*)
 }

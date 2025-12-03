@@ -117,6 +117,24 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "transfer",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"stateMutability": "payable",
 				"type": "receive"
 			}
@@ -149,11 +167,11 @@
 	},
 	"sources": {
 		"contracts/learnings/1_SimpleWallet.sol": {
-			"keccak256": "0x32b235e0b06bce56256801672acc58e9099d38f23666543de19c4da2e198c0d0",
+			"keccak256": "0xeb01521804c821552f3720813f6fe5629fa5e9de8c12b68158d236329468841e",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://d2a3c140d7b9d582392e184adc13c6e0879a1597839525f2494a2a715b9cfd92",
-				"dweb:/ipfs/QmZGFMFo1gJqBVC1C2NtrTy3fjStmgjjzqXSTEdecozWJu"
+				"bzz-raw://266aa51fa2ed7fdca7109347307f17d00e22e8986f01c32376638df88101680c",
+				"dweb:/ipfs/QmajMNazz2PkQatqV1ynqudewNzkJUqZxdxog5EDtirz11"
 			]
 		}
 	},
