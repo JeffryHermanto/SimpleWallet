@@ -39,11 +39,11 @@
 	},
 	"sources": {
 		"contracts/learnings/1_SimpleWallet.sol": {
-			"keccak256": "0xa2e67917535eea6600149da37aed970548e6243e97b301cd2800e7e59c404320",
+			"keccak256": "0xf6268eeefcceb4b8d6204148c54cece283c0227b6e33fb660a032b672ca3534b",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://5aca339108481073fb06c59a9c4825f71d93f53c6aa596e19053d867801dbe49",
-				"dweb:/ipfs/QmZddkQyP5NjXeSLmt2QekSuH1ceRyppsVhkhAHyJqCa8o"
+				"bzz-raw://783930b3db45a4f2c5421700194c7d8a83369d7feeb7b2b1f962fc2174ff72ff",
+				"dweb:/ipfs/QmVdJZVpqUtFcdpQ56AKJFtrYPGwBFmKXbcGfLh5riBnY4"
 			]
 		}
 	},

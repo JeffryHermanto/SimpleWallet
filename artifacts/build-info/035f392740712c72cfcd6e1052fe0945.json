@@ -1,5 +1,5 @@
 {
-	"id": "2b68063952d6a38366964bd27ad0999b",
+	"id": "035f392740712c72cfcd6e1052fe0945",
 	"_format": "hh-sol-build-info-1",
 	"solcVersion": "0.8.30",
 	"solcLongVersion": "0.8.30+commit.73712a01",
@@ -7,7 +7,7 @@
 		"language": "Solidity",
 		"sources": {
 			"contracts/learnings/1_SimpleWallet.sol": {
-				"content": "// SPDX-License-Identifier: GPL-3.0\n\npragma solidity >=0.8.2 <0.9.0;\n\ncontract SimpleWallet {\n    address private owner;\n\n    constructor() {\n        owner = msg.sender;\n    }\n\n    // user bisa menyimpan saldo ke sc (*)\n    // user bisa melihat saldonya sendiri dan saldo user lain\n    // user bisa mentransfer saldo dia ke user lain (*)\n    // user bisa menarik kembali saldonya (*)\n    // (*) = butuh event\n}"
+				"content": "// SPDX-License-Identifier: GPL-3.0\n\npragma solidity >=0.8.2 <0.9.0;\n\ncontract SimpleWallet {\n    address private owner;\n\n    constructor() {\n        owner = msg.sender;\n    }\n\n    mapping(address => uint) private balances;\n\n    // user bisa menyimpan saldo ke sc (*)\n    // user bisa melihat saldonya sendiri dan saldo user lain\n    // user bisa mentransfer saldo dia ke user lain (*)\n    // user bisa menarik kembali saldonya (*)\n    // (*) = butuh event\n}"
 			}
 		},
 		"settings": {
@@ -55,7 +55,7 @@
 						"version": 1
 					},
 					"evm": {
-						"assembly": "    /* \"contracts/learnings/1_SimpleWallet.sol\":70:410  contract SimpleWallet {... */\n  mstore(0x40, 0x80)\n    /* \"contracts/learnings/1_SimpleWallet.sol\":126:175  constructor() {... */\n  callvalue\n  dup1\n  iszero\n  tag_1\n  jumpi\n  revert(0x00, 0x00)\ntag_1:\n  pop\n    /* \"contracts/learnings/1_SimpleWallet.sol\":158:168  msg.sender */\n  caller\n    /* \"contracts/learnings/1_SimpleWallet.sol\":150:155  owner */\n  0x00\n  0x00\n    /* \"contracts/learnings/1_SimpleWallet.sol\":150:168  owner = msg.sender */\n  0x0100\n  exp\n  dup2\n  sload\n  dup2\n  0xffffffffffffffffffffffffffffffffffffffff\n  mul\n  not\n  and\n  swap1\n  dup4\n  0xffffffffffffffffffffffffffffffffffffffff\n  and\n  mul\n  or\n  swap1\n  sstore\n  pop\n    /* \"contracts/learnings/1_SimpleWallet.sol\":70:410  contract SimpleWallet {... */\n  dataSize(sub_0)\n  dup1\n  dataOffset(sub_0)\n  0x00\n  codecopy\n  0x00\n  return\nstop\n\nsub_0: assembly {\n        /* \"contracts/learnings/1_SimpleWallet.sol\":70:410  contract SimpleWallet {... */\n      mstore(0x40, 0x80)\n      revert(0x00, 0x00)\n\n    auxdata: 0xa264697066735822122072a03d28e84c85a6c07f77bbc2453a4dc85a46685c3cb6422ba372c56bd1619c64736f6c634300081e0033\n}\n",
+						"assembly": "    /* \"contracts/learnings/1_SimpleWallet.sol\":70:458  contract SimpleWallet {... */\n  mstore(0x40, 0x80)\n    /* \"contracts/learnings/1_SimpleWallet.sol\":126:175  constructor() {... */\n  callvalue\n  dup1\n  iszero\n  tag_1\n  jumpi\n  revert(0x00, 0x00)\ntag_1:\n  pop\n    /* \"contracts/learnings/1_SimpleWallet.sol\":158:168  msg.sender */\n  caller\n    /* \"contracts/learnings/1_SimpleWallet.sol\":150:155  owner */\n  0x00\n  0x00\n    /* \"contracts/learnings/1_SimpleWallet.sol\":150:168  owner = msg.sender */\n  0x0100\n  exp\n  dup2\n  sload\n  dup2\n  0xffffffffffffffffffffffffffffffffffffffff\n  mul\n  not\n  and\n  swap1\n  dup4\n  0xffffffffffffffffffffffffffffffffffffffff\n  and\n  mul\n  or\n  swap1\n  sstore\n  pop\n    /* \"contracts/learnings/1_SimpleWallet.sol\":70:458  contract SimpleWallet {... */\n  dataSize(sub_0)\n  dup1\n  dataOffset(sub_0)\n  0x00\n  codecopy\n  0x00\n  return\nstop\n\nsub_0: assembly {\n        /* \"contracts/learnings/1_SimpleWallet.sol\":70:458  contract SimpleWallet {... */\n      mstore(0x40, 0x80)\n      revert(0x00, 0x00)\n\n    auxdata: 0xa26469706673582212202709233a1c781d45fb970fcb6d99acc4dbd6590174cac906cfc067cc49da804064736f6c634300081e0033\n}\n",
 						"bytecode": {
 							"functionDebugData": {
 								"@_12": {
@@ -67,18 +67,18 @@
 							},
 							"generatedSources": [],
 							"linkReferences": {},
-							"object": "6080604052348015600e575f5ffd5b50335f5f6101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550603e8060595f395ff3fe60806040525f5ffdfea264697066735822122072a03d28e84c85a6c07f77bbc2453a4dc85a46685c3cb6422ba372c56bd1619c64736f6c634300081e0033",
-							"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH1 0xE JUMPI PUSH0 PUSH0 REVERT JUMPDEST POP CALLER PUSH0 PUSH0 PUSH2 0x100 EXP DUP2 SLOAD DUP2 PUSH20 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF MUL NOT AND SWAP1 DUP4 PUSH20 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF AND MUL OR SWAP1 SSTORE POP PUSH1 0x3E DUP1 PUSH1 0x59 PUSH0 CODECOPY PUSH0 RETURN INVALID PUSH1 0x80 PUSH1 0x40 MSTORE PUSH0 PUSH0 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 PUSH19 0xA03D28E84C85A6C07F77BBC2453A4DC85A4668 TLOAD EXTCODECOPY 0xB6 TIMESTAMP 0x2B LOG3 PUSH19 0xC56BD1619C64736F6C634300081E0033000000 ",
-							"sourceMap": "70:340:0:-:0;;;126:49;;;;;;;;;;158:10;150:5;;:18;;;;;;;;;;;;;;;;;;70:340;;;;;;"
+							"object": "6080604052348015600e575f5ffd5b50335f5f6101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550603e8060595f395ff3fe60806040525f5ffdfea26469706673582212202709233a1c781d45fb970fcb6d99acc4dbd6590174cac906cfc067cc49da804064736f6c634300081e0033",
+							"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH1 0xE JUMPI PUSH0 PUSH0 REVERT JUMPDEST POP CALLER PUSH0 PUSH0 PUSH2 0x100 EXP DUP2 SLOAD DUP2 PUSH20 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF MUL NOT AND SWAP1 DUP4 PUSH20 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF AND MUL OR SWAP1 SSTORE POP PUSH1 0x3E DUP1 PUSH1 0x59 PUSH0 CODECOPY PUSH0 RETURN INVALID PUSH1 0x80 PUSH1 0x40 MSTORE PUSH0 PUSH0 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 0x27 MULMOD 0x23 GASPRICE SHR PUSH25 0x1D45FB970FCB6D99ACC4DBD6590174CAC906CFC067CC49DA80 BLOCKHASH PUSH5 0x736F6C6343 STOP ADDMOD 0x1E STOP CALLER ",
+							"sourceMap": "70:388:0:-:0;;;126:49;;;;;;;;;;158:10;150:5;;:18;;;;;;;;;;;;;;;;;;70:388;;;;;;"
 						},
 						"deployedBytecode": {
 							"functionDebugData": {},
 							"generatedSources": [],
 							"immutableReferences": {},
 							"linkReferences": {},
-							"object": "60806040525f5ffdfea264697066735822122072a03d28e84c85a6c07f77bbc2453a4dc85a46685c3cb6422ba372c56bd1619c64736f6c634300081e0033",
-							"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE PUSH0 PUSH0 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 PUSH19 0xA03D28E84C85A6C07F77BBC2453A4DC85A4668 TLOAD EXTCODECOPY 0xB6 TIMESTAMP 0x2B LOG3 PUSH19 0xC56BD1619C64736F6C634300081E0033000000 ",
-							"sourceMap": "70:340:0:-:0;;;;;"
+							"object": "60806040525f5ffdfea26469706673582212202709233a1c781d45fb970fcb6d99acc4dbd6590174cac906cfc067cc49da804064736f6c634300081e0033",
+							"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE PUSH0 PUSH0 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 0x27 MULMOD 0x23 GASPRICE SHR PUSH25 0x1D45FB970FCB6D99ACC4DBD6590174CAC906CFC067CC49DA80 BLOCKHASH PUSH5 0x736F6C6343 STOP ADDMOD 0x1E STOP CALLER ",
+							"sourceMap": "70:388:0:-:0;;;;;"
 						},
 						"gasEstimates": {
 							"creation": {
@@ -91,21 +91,21 @@
 							".code": [
 								{
 									"begin": 70,
-									"end": 410,
+									"end": 458,
 									"name": "PUSH",
 									"source": 0,
 									"value": "80"
 								},
 								{
 									"begin": 70,
-									"end": 410,
+									"end": 458,
 									"name": "PUSH",
 									"source": 0,
 									"value": "40"
 								},
 								{
 									"begin": 70,
-									"end": 410,
+									"end": 458,
 									"name": "MSTORE",
 									"source": 0
 								},
@@ -312,92 +312,92 @@
 								},
 								{
 									"begin": 70,
-									"end": 410,
+									"end": 458,
 									"name": "PUSH #[$]",
 									"source": 0,
 									"value": "0000000000000000000000000000000000000000000000000000000000000000"
 								},
 								{
 									"begin": 70,
-									"end": 410,
+									"end": 458,
 									"name": "DUP1",
 									"source": 0
 								},
 								{
 									"begin": 70,
-									"end": 410,
+									"end": 458,
 									"name": "PUSH [$]",
 									"source": 0,
 									"value": "0000000000000000000000000000000000000000000000000000000000000000"
 								},
 								{
 									"begin": 70,
-									"end": 410,
+									"end": 458,
 									"name": "PUSH",
 									"source": 0,
 									"value": "0"
 								},
 								{
 									"begin": 70,
-									"end": 410,
+									"end": 458,
 									"name": "CODECOPY",
 									"source": 0
 								},
 								{
 									"begin": 70,
-									"end": 410,
+									"end": 458,
 									"name": "PUSH",
 									"source": 0,
 									"value": "0"
 								},
 								{
 									"begin": 70,
-									"end": 410,
+									"end": 458,
 									"name": "RETURN",
 									"source": 0
 								}
 							],
 							".data": {
 								"0": {
-									".auxdata": "a264697066735822122072a03d28e84c85a6c07f77bbc2453a4dc85a46685c3cb6422ba372c56bd1619c64736f6c634300081e0033",
+									".auxdata": "a26469706673582212202709233a1c781d45fb970fcb6d99acc4dbd6590174cac906cfc067cc49da804064736f6c634300081e0033",
 									".code": [
 										{
 											"begin": 70,
-											"end": 410,
+											"end": 458,
 											"name": "PUSH",
 											"source": 0,
 											"value": "80"
 										},
 										{
 											"begin": 70,
-											"end": 410,
+											"end": 458,
 											"name": "PUSH",
 											"source": 0,
 											"value": "40"
 										},
 										{
 											"begin": 70,
-											"end": 410,
+											"end": 458,
 											"name": "MSTORE",
 											"source": 0
 										},
 										{
 											"begin": 70,
-											"end": 410,
+											"end": 458,
 											"name": "PUSH",
 											"source": 0,
 											"value": "0"
 										},
 										{
 											"begin": 70,
-											"end": 410,
+											"end": 458,
 											"name": "PUSH",
 											"source": 0,
 											"value": "0"
 										},
 										{
 											"begin": 70,
-											"end": 410,
+											"end": 458,
 											"name": "REVERT",
 											"source": 0
 										}
@@ -411,7 +411,7 @@
 						},
 						"methodIdentifiers": {}
 					},
-					"metadata": "{\"compiler\":{\"version\":\"0.8.30+commit.73712a01\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/learnings/1_SimpleWallet.sol\":\"SimpleWallet\"},\"evmVersion\":\"prague\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/learnings/1_SimpleWallet.sol\":{\"keccak256\":\"0xa2e67917535eea6600149da37aed970548e6243e97b301cd2800e7e59c404320\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://5aca339108481073fb06c59a9c4825f71d93f53c6aa596e19053d867801dbe49\",\"dweb:/ipfs/QmZddkQyP5NjXeSLmt2QekSuH1ceRyppsVhkhAHyJqCa8o\"]}},\"version\":1}",
+					"metadata": "{\"compiler\":{\"version\":\"0.8.30+commit.73712a01\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/learnings/1_SimpleWallet.sol\":\"SimpleWallet\"},\"evmVersion\":\"prague\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/learnings/1_SimpleWallet.sol\":{\"keccak256\":\"0xf6268eeefcceb4b8d6204148c54cece283c0227b6e33fb660a032b672ca3534b\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://783930b3db45a4f2c5421700194c7d8a83369d7feeb7b2b1f962fc2174ff72ff\",\"dweb:/ipfs/QmVdJZVpqUtFcdpQ56AKJFtrYPGwBFmKXbcGfLh5riBnY4\"]}},\"version\":1}",
 					"storageLayout": {
 						"storage": [
 							{
@@ -421,6 +421,14 @@
 								"offset": 0,
 								"slot": "0",
 								"type": "t_address"
+							},
+							{
+								"astId": 16,
+								"contract": "contracts/learnings/1_SimpleWallet.sol:SimpleWallet",
+								"label": "balances",
+								"offset": 0,
+								"slot": "1",
+								"type": "t_mapping(t_address,t_uint256)"
 							}
 						],
 						"types": {
@@ -428,6 +436,18 @@
 								"encoding": "inplace",
 								"label": "address",
 								"numberOfBytes": "20"
+							},
+							"t_mapping(t_address,t_uint256)": {
+								"encoding": "mapping",
+								"key": "t_address",
+								"label": "mapping(address => uint256)",
+								"numberOfBytes": "32",
+								"value": "t_uint256"
+							},
+							"t_uint256": {
+								"encoding": "inplace",
+								"label": "uint256",
+								"numberOfBytes": "32"
 							}
 						}
 					},
@@ -445,10 +465,10 @@
 					"absolutePath": "contracts/learnings/1_SimpleWallet.sol",
 					"exportedSymbols": {
 						"SimpleWallet": [
-							13
+							17
 						]
 					},
-					"id": 14,
+					"id": 18,
 					"license": "GPL-3.0",
 					"nodeType": "SourceUnit",
 					"nodes": [
@@ -473,9 +493,9 @@
 							"contractDependencies": [],
 							"contractKind": "contract",
 							"fullyImplemented": true,
-							"id": 13,
+							"id": 17,
 							"linearizedBaseContracts": [
-								13
+								17
 							],
 							"name": "SimpleWallet",
 							"nameLocation": "79:12:0",
@@ -488,7 +508,7 @@
 									"name": "owner",
 									"nameLocation": "114:5:0",
 									"nodeType": "VariableDeclaration",
-									"scope": 13,
+									"scope": 17,
 									"src": "98:21:0",
 									"stateVariable": true,
 									"storageLocation": "default",
@@ -594,20 +614,70 @@
 										"parameters": [],
 										"src": "140:0:0"
 									},
-									"scope": 13,
+									"scope": 17,
 									"src": "126:49:0",
 									"stateMutability": "nonpayable",
 									"virtual": false,
 									"visibility": "public"
+								},
+								{
+									"constant": false,
+									"id": 16,
+									"mutability": "mutable",
+									"name": "balances",
+									"nameLocation": "214:8:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 17,
+									"src": "181:41:0",
+									"stateVariable": true,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+										"typeString": "mapping(address => uint256)"
+									},
+									"typeName": {
+										"id": 15,
+										"keyName": "",
+										"keyNameLocation": "-1:-1:-1",
+										"keyType": {
+											"id": 13,
+											"name": "address",
+											"nodeType": "ElementaryTypeName",
+											"src": "189:7:0",
+											"typeDescriptions": {
+												"typeIdentifier": "t_address",
+												"typeString": "address"
+											}
+										},
+										"nodeType": "Mapping",
+										"src": "181:24:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+											"typeString": "mapping(address => uint256)"
+										},
+										"valueName": "",
+										"valueNameLocation": "-1:-1:-1",
+										"valueType": {
+											"id": 14,
+											"name": "uint",
+											"nodeType": "ElementaryTypeName",
+											"src": "200:4:0",
+											"typeDescriptions": {
+												"typeIdentifier": "t_uint256",
+												"typeString": "uint256"
+											}
+										}
+									},
+									"visibility": "private"
 								}
 							],
-							"scope": 14,
-							"src": "70:340:0",
+							"scope": 18,
+							"src": "70:388:0",
 							"usedErrors": [],
 							"usedEvents": []
 						}
 					],
-					"src": "37:373:0"
+					"src": "37:421:0"
 				},
 				"id": 0
 			}

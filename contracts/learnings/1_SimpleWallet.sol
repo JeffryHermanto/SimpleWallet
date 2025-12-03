@@ -9,6 +9,8 @@ contract SimpleWallet {
         owner = msg.sender;
     }
 
+    mapping(address => uint) private balances;
+
     // user bisa menyimpan saldo ke sc (*)
     // user bisa melihat saldonya sendiri dan saldo user lain
     // user bisa mentransfer saldo dia ke user lain (*)
