@@ -72,6 +72,13 @@
 				],
 				"name": "Withdraw",
 				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "deposit",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -102,11 +109,11 @@
 	},
 	"sources": {
 		"contracts/learnings/1_SimpleWallet.sol": {
-			"keccak256": "0xc108483782762aa7a42461bb6ee38349539365e6c16bf993a4218425227aba27",
+			"keccak256": "0x1406bd5852da2595d8e75e6a9111f82ad63b729ac48de6f1ece58d7f2cb7843a",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://e1b4a133f80c74fef30b910e63a62d60796b393e9a86503fcb684e52a6a1b24d",
-				"dweb:/ipfs/QmWs7BhZf51GVppAgxY18TxzfWDuYtxxLo4z5dFV3CPYeK"
+				"bzz-raw://c6d29443d25a6073cb4e0f66f830006459ec375cbcb41efd89d8172113d9451e",
+				"dweb:/ipfs/QmStSqAFk8fB3RtND1D2sw2d3e7WYGEi99g66ixCfwqMQU"
 			]
 		}
 	},

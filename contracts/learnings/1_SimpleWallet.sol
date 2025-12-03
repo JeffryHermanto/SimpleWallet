@@ -15,9 +15,17 @@ contract SimpleWallet {
     event Transfer(address indexed from, address indexed to, uint amount);
     event Withdraw(address indexed user, uint amount);
 
-    // user bisa menyimpan saldo ke sc (*)
+    function _deposit() private {
+        require(msg.value > 0, "Jumlah depo harus lebih besar dari 0");
+        balances[msg.sender] += msg.value;
+        emit Deposit(msg.sender, msg.value);
+    }
+
+    function deposit() external payable {
+        _deposit();
+    }
+
     // user bisa melihat saldonya sendiri dan saldo user lain
     // user bisa mentransfer saldo dia ke user lain (*)
     // user bisa menarik kembali saldonya (*)
-    // (*) = butuh event
 }
