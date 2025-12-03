@@ -9,6 +9,69 @@
 				"inputs": [],
 				"stateMutability": "nonpayable",
 				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "Deposit",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "Transfer",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "Withdraw",
+				"type": "event"
 			}
 		],
 		"devdoc": {
@@ -39,11 +102,11 @@
 	},
 	"sources": {
 		"contracts/learnings/1_SimpleWallet.sol": {
-			"keccak256": "0xf6268eeefcceb4b8d6204148c54cece283c0227b6e33fb660a032b672ca3534b",
+			"keccak256": "0xc108483782762aa7a42461bb6ee38349539365e6c16bf993a4218425227aba27",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://783930b3db45a4f2c5421700194c7d8a83369d7feeb7b2b1f962fc2174ff72ff",
-				"dweb:/ipfs/QmVdJZVpqUtFcdpQ56AKJFtrYPGwBFmKXbcGfLh5riBnY4"
+				"bzz-raw://e1b4a133f80c74fef30b910e63a62d60796b393e9a86503fcb684e52a6a1b24d",
+				"dweb:/ipfs/QmWs7BhZf51GVppAgxY18TxzfWDuYtxxLo4z5dFV3CPYeK"
 			]
 		}
 	},

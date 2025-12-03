@@ -29,18 +29,18 @@
 			},
 			"generatedSources": [],
 			"linkReferences": {},
-			"object": "6080604052348015600e575f5ffd5b50335f5f6101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550603e8060595f395ff3fe60806040525f5ffdfea26469706673582212202709233a1c781d45fb970fcb6d99acc4dbd6590174cac906cfc067cc49da804064736f6c634300081e0033",
-			"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH1 0xE JUMPI PUSH0 PUSH0 REVERT JUMPDEST POP CALLER PUSH0 PUSH0 PUSH2 0x100 EXP DUP2 SLOAD DUP2 PUSH20 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF MUL NOT AND SWAP1 DUP4 PUSH20 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF AND MUL OR SWAP1 SSTORE POP PUSH1 0x3E DUP1 PUSH1 0x59 PUSH0 CODECOPY PUSH0 RETURN INVALID PUSH1 0x80 PUSH1 0x40 MSTORE PUSH0 PUSH0 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 0x27 MULMOD 0x23 GASPRICE SHR PUSH25 0x1D45FB970FCB6D99ACC4DBD6590174CAC906CFC067CC49DA80 BLOCKHASH PUSH5 0x736F6C6343 STOP ADDMOD 0x1E STOP CALLER ",
-			"sourceMap": "70:388:0:-:0;;;126:49;;;;;;;;;;158:10;150:5;;:18;;;;;;;;;;;;;;;;;;70:388;;;;;;"
+			"object": "6080604052348015600e575f5ffd5b50335f5f6101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550603e8060595f395ff3fe60806040525f5ffdfea2646970667358221220719eb6c761f6cbd17ede4546d9477a60fcd90748e861e546b098a1a02a48840264736f6c634300081e0033",
+			"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH1 0xE JUMPI PUSH0 PUSH0 REVERT JUMPDEST POP CALLER PUSH0 PUSH0 PUSH2 0x100 EXP DUP2 SLOAD DUP2 PUSH20 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF MUL NOT AND SWAP1 DUP4 PUSH20 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF AND MUL OR SWAP1 SSTORE POP PUSH1 0x3E DUP1 PUSH1 0x59 PUSH0 CODECOPY PUSH0 RETURN INVALID PUSH1 0x80 PUSH1 0x40 MSTORE PUSH0 PUSH0 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 PUSH18 0x9EB6C761F6CBD17EDE4546D9477A60FCD907 BASEFEE 0xE8 PUSH2 0xE546 0xB0 SWAP9 LOG1 LOG0 0x2A BASEFEE DUP5 MUL PUSH5 0x736F6C6343 STOP ADDMOD 0x1E STOP CALLER ",
+			"sourceMap": "70:573:0:-:0;;;126:49;;;;;;;;;;158:10;150:5;;:18;;;;;;;;;;;;;;;;;;70:573;;;;;;"
 		},
 		"deployedBytecode": {
 			"functionDebugData": {},
 			"generatedSources": [],
 			"immutableReferences": {},
 			"linkReferences": {},
-			"object": "60806040525f5ffdfea26469706673582212202709233a1c781d45fb970fcb6d99acc4dbd6590174cac906cfc067cc49da804064736f6c634300081e0033",
-			"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE PUSH0 PUSH0 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 0x27 MULMOD 0x23 GASPRICE SHR PUSH25 0x1D45FB970FCB6D99ACC4DBD6590174CAC906CFC067CC49DA80 BLOCKHASH PUSH5 0x736F6C6343 STOP ADDMOD 0x1E STOP CALLER ",
-			"sourceMap": "70:388:0:-:0;;;;;"
+			"object": "60806040525f5ffdfea2646970667358221220719eb6c761f6cbd17ede4546d9477a60fcd90748e861e546b098a1a02a48840264736f6c634300081e0033",
+			"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE PUSH0 PUSH0 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 PUSH18 0x9EB6C761F6CBD17EDE4546D9477A60FCD907 BASEFEE 0xE8 PUSH2 0xE546 0xB0 SWAP9 LOG1 LOG0 0x2A BASEFEE DUP5 MUL PUSH5 0x736F6C6343 STOP ADDMOD 0x1E STOP CALLER ",
+			"sourceMap": "70:573:0:-:0;;;;;"
 		},
 		"gasEstimates": {
 			"creation": {
@@ -56,6 +56,69 @@
 			"inputs": [],
 			"stateMutability": "nonpayable",
 			"type": "constructor"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "user",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "amount",
+					"type": "uint256"
+				}
+			],
+			"name": "Deposit",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "from",
+					"type": "address"
+				},
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "to",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "amount",
+					"type": "uint256"
+				}
+			],
+			"name": "Transfer",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "user",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "amount",
+					"type": "uint256"
+				}
+			],
+			"name": "Withdraw",
+			"type": "event"
 		}
 	]
 }
