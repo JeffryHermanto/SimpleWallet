@@ -33,6 +33,14 @@ contract SimpleWallet {
         _deposit();
     }
 
+    function getMyBalance() external view returns(uint) {
+        return balances[msg.sender];
+    }
+
+    function getBalance(address user) external view returns(uint) {
+        return balances[user];
+    }
+
     // user bisa melihat saldonya sendiri dan saldo user lain
     // user bisa mentransfer saldo dia ke user lain (*)
     // user bisa menarik kembali saldonya (*)
